@@ -1,0 +1,17 @@
+<div class="example-container">
+    <form [formGroup]="formulaire">
+        <mat-form-field appearance="fill">
+            <mat-label>Ville</mat-label>
+            <input matInput placeholder="Auxerre" formControlName="nom" required (ngModelChange)="onChangeVille($event)">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Latitude</mat-label>
+            <input matInput placeholder="Latitude" formControlName="latitude" required [readonly]="true">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Longitude</mat-label>
+            <input matInput placeholder="Longitude" formControlName="longitude" required [readonly]="true">
+        </mat-form-field>
+        <button mat-raised-button type="submit" (click)="onAjouterVille()" [disabled]="formulaire.invalid">Enregistrer</button>
+    </form>
+</div>

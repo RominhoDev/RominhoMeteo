@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="row">
+      <div class="col-4" *ngFor="let bulletin of listeBulletins; let i = index">
+        <app-bulletin-meteo [bulletinMeteo]="bulletin"></app-bulletin-meteo>
+      </div>
+    </div>
+</div>

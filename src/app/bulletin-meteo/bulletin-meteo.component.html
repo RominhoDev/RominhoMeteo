@@ -1,0 +1,28 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-icon color="accent">{{bulletinMeteo.resume === 'ciel dégagé' ? 'wb_sunny' : 
+                                    bulletinMeteo.resume === 'orage et pluie fine' ? 'flash_on' : 
+                                    'cloud'}}</mat-icon>
+        <mat-card-title>{{bulletinMeteo.ville.nom}}</mat-card-title>
+        <mat-card-subtitle
+            [class.cold]="bulletinMeteo.temperature < 0"
+            [class.middle]="bulletinMeteo.temperature >= 0 && bulletinMeteo.temperature <= 10"
+            [class.hot]="bulletinMeteo.temperature > 10">
+            {{bulletinMeteo.temperature | number:'1.1-1'}} °C
+        </mat-card-subtitle>
+        <mat-card-subtitle>Ressenti
+            <span
+                [class.cold]="bulletinMeteo.ressenti < 0"
+                [class.middle]="bulletinMeteo.ressenti >= 0 && bulletinMeteo.ressenti <= 10"
+                [class.hot]="bulletinMeteo.ressenti > 10">
+                {{bulletinMeteo.ressenti | number:'1.1-1'}} °C
+            </span>
+        </mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+        <p>
+        Il fera {{bulletinMeteo.resume}} et le taux d'humidité est de {{bulletinMeteo.humidite}} %
+        </p>
+    </mat-card-content>
+</mat-card>  
